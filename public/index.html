@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LPG Stations Switzerland</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <aside id="panel">
+    <header>
+      <h1>LPG stations in Switzerland</h1>
+      <p id="status">Loading stations…</p>
+    </header>
+
+    <form id="search">
+      <input id="search-input" type="search" placeholder="Town or address, e.g. Bern" autocomplete="off" />
+      <button type="submit">Search</button>
+    </form>
+    <button id="locate" type="button">📍 Stations near me</button>
+
+    <section id="nearest" hidden>
+      <h2 id="nearest-title">Closest stations</h2>
+      <ol id="nearest-list"></ol>
+    </section>
+
+    <footer>
+      Data © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>
+      contributors (stations tagged <code>fuel:lpg=yes</code>). Missing one?
+      <a href="https://www.openstreetmap.org/" target="_blank" rel="noopener">Add it to OSM</a>.
+    </footer>
+  </aside>
+
+  <main id="map"></main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
